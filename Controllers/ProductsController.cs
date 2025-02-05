@@ -14,7 +14,7 @@ namespace Nimap_Task.Controllers
     {
         private ApplicationDBContext db = new ApplicationDBContext();
 
-        // GET: Products
+        
         public ActionResult Index(int page = 1)
         {
             int pageSize = 10;
@@ -34,7 +34,7 @@ namespace Nimap_Task.Controllers
         }
 
 
-        // GET: Products/Details/5
+        
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -49,7 +49,7 @@ namespace Nimap_Task.Controllers
             return View(product);
         }
 
-        // GET: Products/Create
+        
         public ActionResult Create()
         {
             ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryName");
@@ -71,7 +71,7 @@ namespace Nimap_Task.Controllers
             return View(product);
         }
 
-        // GET: Products/Edit/5
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -87,9 +87,7 @@ namespace Nimap_Task.Controllers
             return View(product);
         }
 
-        // POST: Products/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ProductID,ProductName,CategoryId")] Product product)
@@ -104,7 +102,7 @@ namespace Nimap_Task.Controllers
             return View(product);
         }
 
-        // GET: Products/Delete/5
+    
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -119,7 +117,7 @@ namespace Nimap_Task.Controllers
             return View(product);
         }
 
-        // POST: Products/Delete/5
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
